@@ -1,13 +1,44 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ToDoList.Models;
+using Shapes.Models;
 
-namespace ToDoList.Tests
+namespace Shapes.Tests
 {
   [TestClass]
-  public class ItemTest
+  public class RectangleTests
   {
 
-    // Test methods will go here.
+    [TestMethod]
+    public void Rectangle_GetArea_AreaOfRectangle()
+    {
+      // Arrange
+      Rectangle newRectangle = new Rectangle(4, 4);
+      // Act
+      int result = newRectangle.GetArea();
+      // Assert
+      Assert.AreEqual(result, 16);
+    }
+
+    [TestMethod]
+    public void Rectangle_IsSquare_True()
+    {
+      // Arrange
+      Rectangle newRectangle = new Rectangle(4, 4);
+      // Act
+      bool result = newRectangle.IsSquare();
+      // Assert
+      Assert.AreEqual(result, true);
+    }
+
+    [TestMethod]
+    public void Rectangle_IsSquare_False()
+    {
+      // Arrange
+      Rectangle newRectangle = new Rectangle(4, 5);
+      // Act
+      bool result = newRectangle.IsSquare();
+      // Assert
+      Assert.AreEqual(result, false);
+    }
 
   }
 }
